@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+    http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StockReport" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+
+    <!-- Déclaration des champs -->
+    <field name="nom" class="java.lang.String"/>
+    <field name="quantite" class="java.lang.Integer"/>
+    <field name="prix" class="java.lang.Double"/>
+
+    <!-- Titre du rapport -->
+    <title>
+        <band height="60">
+            <textField>
+                <reportElement x="0" y="0" width="535" height="60"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA["Rapport de Stock"]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+
+    <!-- En-têtes des colonnes -->
+    <columnHeader>
+        <band height="30">
+            <staticText>
+                <reportElement x="0" y="0" width="180" height="30"/>
+                <textElement textAlignment="Center"/>
+                <text><![CDATA["Nom"]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="180" y="0" width="180" height="30"/>
+                <textElement textAlignment="Center"/>
+                <text><![CDATA["Quantité"]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="360" y="0" width="180" height="30"/>
+                <textElement textAlignment="Center"/>
+                <text><![CDATA["Prix"]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <!-- Détails des lignes -->
+    <detail>
+        <band height="30">
+            <textField>
+                <reportElement x="0" y="0" width="180" height="30"/>
+                <textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="180" y="0" width="180" height="30"/>
+                <textFieldExpression><![CDATA[$F{quantite}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="360" y="0" width="180" height="30"/>
+                <textFieldExpression><![CDATA[$F{prix}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+
+</jasperReport>
