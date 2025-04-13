@@ -1,1 +1,29 @@
+# ✏️ Fonctionnalité : MODIFIER — Projet GESTION3
+ 
+👤 Nom : Maryem  
 
+🎯 Branche Git : modifier
+ 
+Fonction développée :
+
+-----------------------
+
+- Ajout du bouton "Modifier" dans l’interface (`produit_view.fxml`)
+
+- Préremplissage automatique des champs avec les données du produit sélectionné
+
+- Développement de la méthode `handleEdit()` dans `ProduitController.java`
+
+- Implémentation de la méthode `updateProduit(Produit produit)` dans `ProduitDAO.java`
+
+- Connexion à la base de données pour mettre à jour les données via JDBC
+
+- Gestion de la validation des données modifiées avant enregistrement
+
+- Rafraîchissement de la TableView après modification
+
+- Tests de bon fonctionnement avec différents scénarios (modèle, quantité, année…)
+ 
+📌 La modification est appliquée **directement en base de données**, avec mise à jour immédiate de l’interface.
+
+ 
