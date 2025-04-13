@@ -37,16 +37,17 @@ Permettre à l’utilisateur de supprimer un produit en un clic :
 ### Dans `ProduitController.java`
 
 
+```java
 @FXML
-    public void supprimerProduit() {
-        String nom = nomField.getText();
-        Produit produit = produitDAO.getProduitByNom(nom);
+public void supprimerProduit() {
+    String nom = nomField.getText(); // récupère le nom du champ
+    Produit produit = produitDAO.getProduitByNom(nom);
 
-        if (produit != null) {
-            produitDAO.supprimerProduit(produit.getNom());
-            rafraichirTableau();
-            showAlert("Produit supprimé", "Le produit a été supprimé de l'inventaire.");
-        } else {
-            showAlert("Erreur", "Aucun produit trouvé avec ce nom.");
-        }
+    if (produit != null) {
+        produitDAO.supprimerProduit(produit.getNom());
+        rafraichirTableau();
+        showAlert("Produit supprimé", "Le produit a été supprimé de l'inventaire.");
+    } else {
+        showAlert("Erreur", "Aucun produit trouvé avec ce nom.");
     }
+}
