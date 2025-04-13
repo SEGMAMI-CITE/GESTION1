@@ -51,3 +51,19 @@ public void supprimerProduit() {
         showAlert("Erreur", "Aucun produit trouvé avec ce nom.");
     }
 }
+
+### Code de suppression dans ProduitDAO.java
+java
+Copier
+Modifier
+public void supprimerProduit(String nom) {
+    try {
+        String query = "DELETE FROM produits WHERE nom = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setString(1, nom); // le nom du produit à supprimer
+            stmt.executeUpdate();   // exécution de la requête
+        }
+    } catch (SQLException e) {
+        e.printStackTrace(); // en cas d'erreur SQL
+    }
+}
