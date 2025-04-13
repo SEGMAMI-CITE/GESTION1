@@ -34,50 +34,57 @@ Permettre à l’utilisateur de supprimer un produit en un clic :
 
 ##  Code essentiel
 
-### Dans `ProduitController.java`
+## 🔧 Étapes de la suppression
 
+### 1. Dans `ProduitController.java`
 
 ```java
 @FXML
-// Méthode pour supprimer un produit à partir de son nom
-public void supprimerProduit(String nom) {
-    
-    // Requête SQL paramétrée pour supprimer un produit de la table "produits"
-    String sql = "DELETE FROM produits WHERE nom = ?";
+public void supprimerProduit() {
+    String nom = nomField.getText(); // Récupère le nom du produit à supprimer
+    Produit produit = produitDAO.getProduitByNom(nom); // Recherche dans la BDD
 
-    //  ouvre automatiquement la connexion et le statement
-    try (
-        Connection conn = DatabaseConnection.getConnection();           // Connexion à la base
-        PreparedStatement stmt = conn.prepareStatement(sql)            // Préparation de la requête
-    ) {
-        stmt.setString(1, nom); // Remplace le "?" par le nom passé en paramètre
-        stmt.executeUpdate();   // Exécute la suppression dans la base de données
-    } catch (SQLException e) {
-        e.printStackTrace();    // Affiche l'erreur si la suppression échoue
+    if (produit != null) {
+        produitDAO.supprimerProduit(produit.getNom()); // Supprime le produit
+        rafraichirTableau(); // Rafraîchit la table pour refléter les modifications
+        showAlert("Produit supprimé", "Le produit a été supprimé de l'inventaire.");
+    } else {
+        showAlert("Erreur", "Aucun produit trouvé avec ce nom.");
     }
 }
+```
 
+---
 
-### Code de suppression dans ProduitDAO.java
-// Méthode qui supprime un produit de la base de données selon son nom
+### 2. Dans `ProduitDAO.java`
+
+```java
 public void supprimerProduit(String nom) {
     try {
-        // Requête SQL préparée avec un paramètre (le nom du produit à supprimer)
         String query = "DELETE FROM produits WHERE nom = ?";
-
-        // Préparation de la requête à partir de la connexion déjà établie
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            
-            // On insère le nom du produit dans le "?"
-            stmt.setString(1, nom); // le nom du produit à supprimer
-            
-            // On exécute la suppression
-            stmt.executeUpdate();   // exécution de la requête
+            stmt.setString(1, nom); // Le nom est utilisé pour identifier le produit
+            stmt.executeUpdate();   // Exécute la suppression
         }
-
     } catch (SQLException e) {
-        // Affiche les erreurs SQL dans la console
-        e.printStackTrace(); // en cas d'erreur SQL
+        e.printStackTrace(); // Gère les éventuelles erreurs SQL
     }
 }
+```
+
+---
+
+## 💬 Message utilisateur
+
+L'utilisateur reçoit une **alerte** :
+
+- ✅ Si le produit a bien été supprimé
+- ❌ Si aucun produit correspondant n'a été trouvé
+
+---
+
+## ✅ Résultat attendu
+
+- Le produit n'apparaît plus dans le tableau.
+- Il est **définitivement supprimé** de la base de données.
 
