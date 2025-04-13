@@ -35,6 +35,8 @@ Permettre à l’utilisateur de supprimer un produit en un clic :
 ##  Code essentiel
 
 ### Dans `ProduitController.java`
+
+
 @FXML
     public void supprimerProduit() {
         String nom = nomField.getText();
