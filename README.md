@@ -39,29 +39,45 @@ Permettre à l’utilisateur de supprimer un produit en un clic :
 
 ```java
 @FXML
-public void supprimerProduit() {
-    String nom = nomField.getText(); // récupère le nom du champ
-    Produit produit = produitDAO.getProduitByNom(nom);
+// Méthode pour supprimer un produit à partir de son nom
+public void supprimerProduit(String nom) {
+    
+    // Requête SQL paramétrée pour supprimer un produit de la table "produits"
+    String sql = "DELETE FROM produits WHERE nom = ?";
 
-    if (produit != null) {
-        produitDAO.supprimerProduit(produit.getNom());
-        rafraichirTableau();
-        showAlert("Produit supprimé", "Le produit a été supprimé de l'inventaire.");
-    } else {
-        showAlert("Erreur", "Aucun produit trouvé avec ce nom.");
+    //  ouvre automatiquement la connexion et le statement
+    try (
+        Connection conn = DatabaseConnection.getConnection();           // Connexion à la base
+        PreparedStatement stmt = conn.prepareStatement(sql)            // Préparation de la requête
+    ) {
+        stmt.setString(1, nom); // Remplace le "?" par le nom passé en paramètre
+        stmt.executeUpdate();   // Exécute la suppression dans la base de données
+    } catch (SQLException e) {
+        e.printStackTrace();    // Affiche l'erreur si la suppression échoue
     }
 }
 
+
 ### Code de suppression dans ProduitDAO.java
-```java
+// Méthode qui supprime un produit de la base de données selon son nom
 public void supprimerProduit(String nom) {
     try {
+        // Requête SQL préparée avec un paramètre (le nom du produit à supprimer)
         String query = "DELETE FROM produits WHERE nom = ?";
+
+        // Préparation de la requête à partir de la connexion déjà établie
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            
+            // On insère le nom du produit dans le "?"
             stmt.setString(1, nom); // le nom du produit à supprimer
+            
+            // On exécute la suppression
             stmt.executeUpdate();   // exécution de la requête
         }
+
     } catch (SQLException e) {
+        // Affiche les erreurs SQL dans la console
         e.printStackTrace(); // en cas d'erreur SQL
     }
 }
+
