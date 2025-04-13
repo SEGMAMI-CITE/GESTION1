@@ -1,6 +1,6 @@
 # 📦 GESTION3 — Application de gestion de stock (JavaFX + JDBC)
 
-`GESTION3` est une application de bureau Java développée avec JavaFX permettant de gérer un inventaire de produits et leurs mouvements de stock (entrées/sorties).  
+`GESTION3` est une application Java développée avec JavaFX permettant de gérer un inventaire de produits et leurs mouvements de stock (entrées/sorties).  
 Elle permet d'ajouter, modifier, supprimer des produits, et de générer des rapports PDF avec JasperReports.
 
 ---
@@ -51,7 +51,7 @@ GESTION3/
 | Java             | Langage principal                   |
 | JavaFX           | UI graphique                        |
 | JDBC             | Connexion à la base de données      |
-| MySQL / SQLite   | SGBD utilisé                        |
+| MySQL            | SGBD utilisé                        |
 | JasperReports    | Génération de rapports PDF          |
 | SceneBuilder     | Construction des vues `.fxml`       |
 
