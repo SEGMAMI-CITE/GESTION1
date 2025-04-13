@@ -59,15 +59,25 @@ public void supprimerProduit() {
 ### 2. Dans `ProduitDAO.java`
 
 ```java
+// Méthode qui supprime un produit de la base de données selon son nom
 public void supprimerProduit(String nom) {
     try {
+        // Requête SQL préparée avec un paramètre (le nom du produit à supprimer)
         String query = "DELETE FROM produits WHERE nom = ?";
+
+        // Préparation de la requête à partir de la connexion déjà établie
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setString(1, nom); // Le nom est utilisé pour identifier le produit
-            stmt.executeUpdate();   // Exécute la suppression
+            
+            // On insère le nom du produit dans le "?"
+            stmt.setString(1, nom); // le nom du produit à supprimer
+            
+            // On exécute la suppression
+            stmt.executeUpdate();   // exécution de la requête
         }
+
     } catch (SQLException e) {
-        e.printStackTrace(); // Gère les éventuelles erreurs SQL
+        // Affiche les erreurs SQL dans la console
+        e.printStackTrace(); // en cas d'erreur SQL
     }
 }
 ```
