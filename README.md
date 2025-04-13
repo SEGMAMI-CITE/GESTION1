@@ -64,12 +64,18 @@ GESTION3/
 3. Lancer la classe `MainApp.java`
 4. L’interface graphique s’ouvre avec le tableau de produits
 
+
+---
+
+## 📚 Documentation spécifique
+
+- [`README_ajouter.md`](README_ajouter.md)
+- [`README_modifier.md`](README_modifier.md)
+- [`README_suppression.md`](README_suppression.md)
+
 ---
 
 
-
-
----
 
 ## 📄 Rapport PDF
 
