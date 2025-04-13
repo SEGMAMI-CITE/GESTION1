@@ -53,9 +53,7 @@ public void supprimerProduit() {
 }
 
 ### Code de suppression dans ProduitDAO.java
-java
-Copier
-Modifier
+```java
 public void supprimerProduit(String nom) {
     try {
         String query = "DELETE FROM produits WHERE nom = ?";
