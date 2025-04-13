@@ -74,16 +74,16 @@ public void supprimerProduit(String nom) {
 
 ---
 
-## 💬 Message utilisateur
+##  Message utilisateur
 
 L'utilisateur reçoit une **alerte** :
 
-- ✅ Si le produit a bien été supprimé
-- ❌ Si aucun produit correspondant n'a été trouvé
+-  Si le produit a bien été supprimé
+-  Si aucun produit correspondant n'a été trouvé
 
 ---
 
-## ✅ Résultat attendu
+##  Résultat attendu
 
 - Le produit n'apparaît plus dans le tableau.
 - Il est **définitivement supprimé** de la base de données.
