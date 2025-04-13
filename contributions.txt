@@ -1,1 +1,16 @@
-
+🔴 Fonctionnalité : SUPPRESSION — Projet GESTION3
+ 
+👤 Nom : YASMINE  
+🎯 Branche Git : supprimer
+ 
+Fonction développée :
+-----------------------
+- Ajout du bouton "Supprimer" dans l’interface utilisateur (`produit_view.fxml`)
+- Création de la méthode `handleDelete()` dans `ProduitController.java`
+- Implémentation de la méthode `deleteProduit(int id)` dans `ProduitDAO.java`
+- Suppression du produit dans la base de données avec JDBC
+- Rafraîchissement automatique de la TableView après suppression
+- Validation que les suppressions sont bien effectives en base
+- Tests complets de la suppression (cas existant, produit déjà supprimé, etc.)
+ 
+📌 La suppression s'effectue en un clic sur le bouton, en temps réel, sans redémarrage de l'application.
