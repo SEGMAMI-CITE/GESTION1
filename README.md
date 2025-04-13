@@ -17,7 +17,28 @@ Elle permet d'ajouter, modifier, supprimer des produits, et de générer des rap
 
 ## 🗂️ Structure du projet
 
-GESTION3/ ├── src/ │ └── com.monapp/ │ ├── controller/ │ │ ├── ProduitController.java │ │ └── MouvementController.java │ └── model/ │ ├── Produit.java │ ├── ProduitDAO.java │ ├── MouvementStock.java │ ├── MouvementStockDAO.java │ ├── DatabaseConnection.java │ ├── ReportGenerator.java │ └── MainApp.java ├── resources/ │ ├── views/ │ │ ├── produit_view.fxml │ │ └── mouvements.fxml │ └── report_template.jrxml ├── README.md ├── CONTRIBUTING.md └── contributions.tx
+GESTION3/
+├── src/
+│   └── com/monapp/
+│       ├── controller/
+│       │   ├── ProduitController.java           # Gère les actions sur les produits
+│       │   └── MouvementController.java         # Gère les entrées/sorties de stock
+│       └── model/
+│           ├── Produit.java                     # Classe modèle représentant un produit
+│           ├── ProduitDAO.java                  # Accès aux données des produits (CRUD)
+│           ├── MouvementStock.java              # Classe modèle pour les mouvements
+│           ├── MouvementStockDAO.java           # Accès aux données des mouvements
+│           ├── DatabaseConnection.java          # Connexion à la base de données
+│           ├── ReportGenerator.java             # Générateur de rapports PDF
+│           └── MainApp.java                     # Point d’entrée principal de l’application
+├── resources/
+│   ├── views/
+│   │   ├── produit_view.fxml                    # Interface graphique des produits
+│   │   └── mouvements.fxml                      # Interface des mouvements de stock
+│   └── report_template.jrxml                    # Template JasperReports (PDF)
+├── README.md                                     # Documentation principale du projet
+├── CONTRIBUTING.md                               # Règles de contribution au projet
+└── contributions.txt                             # Liste des contributions des membres
 
 
 
@@ -47,7 +68,6 @@ GESTION3/ ├── src/ │ └── com.monapp/ │ ├── controller/ │
 
 
 
-Voir [`contributions.txt`](contributions.txt) pour plus de détails.
 
 ---
 
