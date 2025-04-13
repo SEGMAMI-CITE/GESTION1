@@ -59,7 +59,7 @@ GESTION3/
 
 ## 🚀 Lancer l'application
 
-1. Ouvrir le projet dans IntelliJ ou Eclipse
+1. Ouvrir le projet dans IntelliJ 
 2. S’assurer que la base de données est accessible (voir `DatabaseConnection.java`)
 3. Lancer la classe `MainApp.java`
 4. L’interface graphique s’ouvre avec le tableau de produits
