@@ -8,9 +8,7 @@ Fonction développée :
 
 -----------------------
 
-- Création du formulaire d’ajout dans l’interface utilisateur (`produit_view.fxml`)
-
-- Liaison des champs de saisie 
+- Création du formulaire d’ajout dans l’interface utilisateur (`produit_view.fxml`) 
 
 - Développement de la méthode `ajouterProduit()` dans `ProduitController.java`
 
