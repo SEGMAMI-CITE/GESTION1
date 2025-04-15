@@ -10,17 +10,13 @@ Fonction développée :
 
 - Création du formulaire d’ajout dans l’interface utilisateur (`produit_view.fxml`)
 
-- Liaison des champs de saisie (marque, modèle, année, etc.)
+- Liaison des champs de saisie 
 
-- Développement de la méthode `handleAdd()` dans `ProduitController.java`
+- Développement de la méthode `ajouterProduit()` dans `ProduitController.java`
 
-- Ajout de la méthode `insertProduit(Produit produit)` dans `ProduitDAO.java`
+- Ajout de la méthode `public void ajouterProduit(Produit produit)` dans `ProduitDAO.java`
 
 - Connexion avec la base de données via JDBC pour insérer les nouveaux produits
-
-- Actualisation automatique de la TableView après ajout
-
-- Validation des champs de saisie (non vides, types valides)
 
 - Test de bon fonctionnement : ajout visible immédiatement après clic
  
