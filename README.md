@@ -25,8 +25,8 @@ Permettre à l'utilisateur de **modifier les informations existantes** d’un pr
 
 | Fichier                  | Rôle                                                  |
 |--------------------------|-------------------------------------------------------|
-| `ProduitController.java` | Contient `toggleEdit()` et `saveEdit()`              |
-| `ProduitDAO.java`        | Fournit la méthode `update(Produit p)`               |
+| `ProduitController.java` | Contient `modifierProduit()`              |
+| `ProduitDAO.java`        | Fournit la méthode `modifierProduit(Produit p)`               |
 | `produit_view.fxml`      | Contient les champs de formulaire et le bouton "✏️"  |
 
 ---
