@@ -12,12 +12,11 @@ Permettre à l'utilisateur de **modifier les informations existantes** d’un pr
 
 ##  Étapes du fonctionnement
 
-1. L'utilisateur sélectionne un produit dans le tableau
-2. Il clique sur le bouton **Modifier**
-3. Les champs de saisie sont remplis avec les données actuelles du produit
-4. L'utilisateur modifie les champs puis clique sur **Mise a jour**
-5. Les nouvelles données sont **mises à jour dans la base**
-6. L'interface est actualisée automatiquement
+1. Il clique sur le bouton **Modifier**
+2. Les champs de saisie sont remplis avec les données actuelles du produit
+3. L'utilisateur modifie les champs puis clique sur **Mise a jour**
+4. Les nouvelles données sont **mises à jour dans la base**
+5. L'interface est actualisée automatiquement
 
 ---
 
