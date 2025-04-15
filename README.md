@@ -12,6 +12,7 @@ Elle permet d'ajouter, modifier, supprimer des produits, et de générer des rap
 - ❌ Suppression d’un produit ou mouvement
 - 📊 Génération de rapports avec JasperReports
 - 💾 Connexion réelle à une base de données via JDBC
+**
 
 ---
 
