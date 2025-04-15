@@ -14,7 +14,7 @@ Permettre à l’utilisateur de supprimer un produit en un clic :
 
 ##  Processus de suppression
 
-1. L'utilisateur sélectionne un produit dans le tableau
+1. L'utilisateur entre un produit dans la barre
 2. Il clique sur le bouton **Supprimer**
 3. La méthode `supprimerProduit()` du contrôleur est appelée
 4. Le produit est supprimé de la base avec la requête `DELETE`
